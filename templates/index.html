@@ -1,0 +1,34 @@
+<!doctype html>
+<html><head><title>Fraud Detection</title>
+<style>
+body{font-family:Segoe UI;background:linear-gradient(135deg,#020617,#1e293b);color:white;padding:35px}
+.wrap{max-width:1050px;margin:auto;background:#111827;padding:30px;border-radius:18px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+input{padding:13px;border:none;border-radius:10px;width:100%}
+button{padding:14px 24px;background:#16a34a;border:none;border-radius:12px;color:white;font-weight:bold;cursor:pointer}
+#out{margin-top:20px;font-size:24px}
+h1{margin-top:0}
+</style></head>
+<body>
+<div class='wrap'>
+<h1>💳 Credit Card Fraud Detection System</h1>
+<p>Professional placement-ready dashboard</p>
+<div class='grid'>
+<input id='amount' value='500' placeholder='Amount'>
+<input id='hour' value='23' placeholder='Hour'>
+<input id='tx_1h' value='6' placeholder='Transactions last 1h'>
+<input id='is_international' value='1' placeholder='International 0/1'>
+<input id='is_night' value='1' placeholder='Night 0/1'>
+</div><br>
+<button onclick='go()'>Predict Risk</button>
+<div id='out'></div>
+</div>
+<script>
+async function go(){
+ let fd=new FormData();
+ ['amount','hour','tx_1h','is_international','is_night'].forEach(i=>fd.append(i,document.getElementById(i).value));
+ let r=await fetch('/predict',{method:'POST',body:fd});
+ let d=await r.json();
+ document.getElementById('out').innerHTML='Fraud Probability: '+(d.probability*100).toFixed(2)+'% | Decision: '+d.decision;
+}
+</script></body></html>
