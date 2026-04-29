@@ -202,11 +202,11 @@ This project reflects real-world business use cases where fast and accurate deci
 ### Dashboard UI
 
 <img width="1920" height="1080" alt="Screenshot (162)" src="https://github.com/user-attachments/assets/89849b17-c9e6-4941-9f8e-27c70941a407" />
-
+# low Risk 
 <img width="1920" height="1080" alt="Screenshot (163)" src="https://github.com/user-attachments/assets/283b5e04-b893-4806-a4dc-106b63d6e1cc" />
-
+# medium Risk
 <img width="1920" height="1080" alt="Screenshot (164)" src="https://github.com/user-attachments/assets/48a444b5-8aaf-469c-a5e3-789966a99acb" />
-
+# High Risk
 <img width="1920" height="1080" alt="Screenshot (165)" src="https://github.com/user-attachments/assets/96776da0-1a6b-4509-a823-6f60ed42237a" />
 
 ### Confusion Matrix
